@@ -8,12 +8,13 @@ import styles from "./style.module.css";
 // import dayjs from "dayjs";
 // import "dayjs/locale/ja";
 import CalendarElement from "../CalendarElement";
-import { createCalendar } from "../../logic/calendar";
+// import { createCalendar } from "../../logic/calendar";
 
-const calendar = createCalendar();
+// const calendar = createCalendar();
 const days = ["日","月","火","水","木","金","土",]
 
-const CalendarBoard = () => {
+const CalendarBoard = ({calendar}) => {
+  console.log(calendar);
   return (
     <div className={styles.container}>
       <GridList 
