@@ -6,9 +6,13 @@
   border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }
+.days {
+  border-right: 1px solid #ccc;
+  padding-top: 10px;
+}
 
-@media screen and (max-width: 767px){
-  .container{
-    height:80vh;
+@media screen and (max-width: 767px) {
+  .container {
+    height: 80vh;
   }
 }
