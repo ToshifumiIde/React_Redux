@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 //カレンダー生成のロジック
-export const createCalendar = (month)=>{
+export const createCalendar = ( month ) => {
   // const firstDay = dayjs().startOf("month");
   const firstDay = getMonth(month);
   const firstDayIndex = firstDay.day();
@@ -15,13 +15,12 @@ export const createCalendar = (month)=>{
 };
 
 //
-export const getMonth = ({year , month}) =>{
+export const getMonth = ({year , month}) => {
   return dayjs(`${year} - ${month}`);
 }
 
-
 //本日の日付を取得
-export const isSameDay = ( d1 , d2 ) =>{
+export const isSameDay = ( d1 , d2 ) => {
   const format = "YYYYMMDD";
   return d1.format(format) === d2.format(format);
 };
