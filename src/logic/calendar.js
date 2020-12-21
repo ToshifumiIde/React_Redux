@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 
 //カレンダー生成のロジック
 export const createCalendar = ( month ) => {
-  // const firstDay = dayjs().startOf("month");
   const firstDay = getMonth(month);
   const firstDayIndex = firstDay.day();
   return Array(35)
@@ -31,4 +30,22 @@ export const isSameMonth = ( m1 , m2 ) => {
   return m1.format(format) === m2.format(format);
 }
 
+//月初初日のbooleanを返却
 export const isFirstDay = day => day.date() === 1;
+
+
+export const getNextMonth = month => {
+  const day = getMonth(month).add(1,"month");
+  return formatMonth(day);
+};
+
+export const getPreviousMonth = month => {
+  const day = getMonth(month).add(-1,"month");
+  return formatMonth(day);
+};
+
+//戻り値をオブジェクトにする場合、({})で記述。
+export const formatMonth = day => ({
+  month:day.month() + 1,
+  year:day.year(),
+});

@@ -3,16 +3,17 @@ import React from 'react'
 import styles from "./style.module.css";
 import {Typography} from "@material-ui/core";
 import dayjs from "dayjs";
-import {isSameDay, isSameMonth , isFirstDay} from "../../logic/calendar";
+import {isSameDay, isSameMonth , isFirstDay , getMonth} from "../../logic/calendar";
 
 
-const CalendarElement = ({day}) => {
+const CalendarElement = ({day , month}) => {
   const today = dayjs();
   const format = isFirstDay(day) ?"M月D日" :"D";
 
   const isToday = isSameDay( day , today );
 
-  const isCurrentMonth = isSameMonth(day,today);
+  const currentMonth = getMonth(month);
+  const isCurrentMonth = isSameMonth(day,currentMonth);
   const textColor = isCurrentMonth ? "textPrimary" : "textSecondary" ; 
 
   return (

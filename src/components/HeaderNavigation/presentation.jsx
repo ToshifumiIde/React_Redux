@@ -18,7 +18,7 @@ const StyledTypography = withStyles({
   root:{margin:"0 30px 0 10px"}
 })(Typography);
 
-const HeaderNavigation = ()=>{
+const HeaderNavigation = ( {setNextMonth , setPreviousMonth} ) => {
   return(
     <StyledToolbar>
       <IconButton>
@@ -27,7 +27,7 @@ const HeaderNavigation = ()=>{
       <img 
         src="/images/calendar_icon.png"
         alt="カレンダーのアイコンです"
-        class={styles.calendarIcon}
+        className={styles.calendarIcon}
         />
         <StyledTypography
           color="textSecondary"
@@ -36,10 +36,10 @@ const HeaderNavigation = ()=>{
         >
           カレンダー
         </StyledTypography>
-        <IconButton size="small">
+        <IconButton size="small" onClick={setPreviousMonth}>
           <ArrowBackIos />
         </IconButton>
-        <IconButton size="small">
+        <IconButton size="small" onClick={setNextMonth}>
           <ArrowForwardIos />
         </IconButton>
     </StyledToolbar>

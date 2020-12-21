@@ -13,8 +13,8 @@ import CalendarElement from "../CalendarElement";
 // const calendar = createCalendar();
 const days = ["日","月","火","水","木","金","土",]
 
-const CalendarBoard = ({calendar}) => {
-  console.log(calendar);
+const CalendarBoard = ({calendar,month}) => {
+  // console.log(calendar);
   return (
     <div className={styles.container}>
       <GridList 
@@ -38,7 +38,7 @@ const CalendarBoard = ({calendar}) => {
           {calendar.map((c)=>{
             return(
               <li key={c.toISOString()}>
-                <CalendarElement day={c} />
+                <CalendarElement day={c} month={month}/>
               </li>
             )
           })}

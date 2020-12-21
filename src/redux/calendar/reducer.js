@@ -1,14 +1,12 @@
-import { CALENDAR_SET_MONTH } from "./actions";
 import dayjs from "dayjs";
+import { CALENDAR_SET_MONTH } from "./actions";
+import { formatMonth } from "../../logic/calendar";
 const day = dayjs();
 
-//reduxで所有するサンプルの初期値
-const init = {
-  year:day.year(),
-  month:day.month() + 1,
-}
+//reduxで所有する日付の初期値
+const init = formatMonth(day);
 
-const calendarReducer = ( state = init , action )=>{
+const calendarReducer = ( state = init , action ) => {
   const {type , payload} = action;
   switch(type){
     case CALENDAR_SET_MONTH:
