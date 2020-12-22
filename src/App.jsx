@@ -5,7 +5,7 @@ import { createStore } from "redux";
 import CalendarBoard from "./components/CalendarBoard/container";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
-import HeaderNavigation from './components/HeaderNavigation/presentation';
+import HeaderNavigation from './components/HeaderNavigation/container';
 dayjs.locale("ja");
 
 //reduxで生成されたreducerをまとめてstoreに格納

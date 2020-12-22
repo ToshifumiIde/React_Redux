@@ -1,4 +1,5 @@
 import React from "react";
+// import { DatePicker } from "@material-ui/core";
 import {
   IconButton,
   Toolbar,
@@ -18,7 +19,7 @@ const StyledTypography = withStyles({
   root:{margin:"0 30px 0 10px"}
 })(Typography);
 
-const HeaderNavigation = ( {setNextMonth , setPreviousMonth} ) => {
+const HeaderNavigation = ({ setNextMonth , setPreviousMonth }) => {
   return(
     <StyledToolbar>
       <IconButton>
@@ -36,10 +37,16 @@ const HeaderNavigation = ( {setNextMonth , setPreviousMonth} ) => {
         >
           カレンダー
         </StyledTypography>
-        <IconButton size="small" onClick={setPreviousMonth}>
+        <IconButton 
+          size="small"
+          onClick={setPreviousMonth}
+        >
           <ArrowBackIos />
         </IconButton>
-        <IconButton size="small" onClick={setNextMonth}>
+        <IconButton 
+          size="small"
+          onClick={setNextMonth}
+        >
           <ArrowForwardIos />
         </IconButton>
     </StyledToolbar>

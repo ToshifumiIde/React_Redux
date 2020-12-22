@@ -1,5 +1,4 @@
 //「reduxからのstate」と「reduxにdispatchする関数」をpropsとして提供するコンポーネント
-
 import { connect } from "react-redux";
 import { createCalendar } from "../../logic/calendar";
 import CalendarBoard from "./presentation";

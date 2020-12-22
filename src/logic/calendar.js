@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 export const createCalendar = ( month ) => {
   const firstDay = getMonth(month);
   const firstDayIndex = firstDay.day();
+
   return Array(35)
     .fill(0)
     .map(( _ , index ) => {
@@ -15,7 +16,7 @@ export const createCalendar = ( month ) => {
 
 //
 export const getMonth = ({year , month}) => {
-  return dayjs(`${year} - ${month}`);
+  return dayjs(`${year}-${month}`);
 }
 
 //本日の日付を取得
@@ -33,12 +34,13 @@ export const isSameMonth = ( m1 , m2 ) => {
 //月初初日のbooleanを返却
 export const isFirstDay = day => day.date() === 1;
 
-
+//翌月のオブジェクトを返却する関数
 export const getNextMonth = month => {
   const day = getMonth(month).add(1,"month");
   return formatMonth(day);
 };
 
+//前月のオブジェクトを返却する関数
 export const getPreviousMonth = month => {
   const day = getMonth(month).add(-1,"month");
   return formatMonth(day);
