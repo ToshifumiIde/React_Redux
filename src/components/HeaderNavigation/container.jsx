@@ -1,8 +1,12 @@
 import HeaderNavigation from "./presentation";
 import { connect } from "react-redux";
-import { getNextMonth, getPreviousMonth } from "../../logic/calendar";
+import { 
+  getNextMonth,
+  getPreviousMonth,
+  getMonth,
+  formatMonth,
+} from "../../logic/calendar";
 import { calendarSetMonth } from "../../redux/calendar/actions";
-
 
 const mapStateToProps = state =>({calendar:state.calendar});
 
@@ -12,11 +16,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-
-
-
 const mergeProps = (stateProps , dispatchProps) => ({
-  // month:getMonth(stateProps.calendar),
+  //reduxのstate => dayjs
+  month:getMonth(stateProps.calendar),
   setNextMonth:() => {
     const nextMonth = getNextMonth(stateProps.calendar);
     dispatchProps.setMonth(nextMonth);
@@ -24,9 +26,13 @@ const mergeProps = (stateProps , dispatchProps) => ({
   setPreviousMonth:() => {
     const previousMonth = getPreviousMonth(stateProps.calendar);
     dispatchProps.setMonth(previousMonth);
+  },
+  setMonth:dayObj => {
+    //dayjs => reduxのstate
+    const month = formatMonth(dayObj);
+    dispatchProps.setMonth(month);
   }
 });
-
 
 export default connect(
   mapStateToProps,

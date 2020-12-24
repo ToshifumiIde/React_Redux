@@ -5,16 +5,12 @@ import {
   Typography
 } from "@material-ui/core";
 import styles from "./style.module.css";
-// import dayjs from "dayjs";
-// import "dayjs/locale/ja";
 import CalendarElement from "../CalendarElement";
 // import { createCalendar } from "../../logic/calendar";
 
-// const calendar = createCalendar();
 const days = ["日","月","火","水","木","金","土",]
 
 const CalendarBoard = ({calendar,month}) => {
-  // console.log(calendar);
   return (
     <div className={styles.container}>
       <GridList 
