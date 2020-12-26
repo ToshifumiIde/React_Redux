@@ -3,7 +3,7 @@ export const ADD_SCHEDULE_OPEN_DIALOG = "ADD_SCHEDULE_OPEN_DIALOG";
 export const ADD_SCHEDULE_CLOSE_DIALOG = "ADD_SCHEDULE_CLOSE_DIALOG";
 
 //formの値を更新するaction
-export const addScheduleDialog = payload =>({
+export const addScheduleSetValue = payload =>({
   type:ADD_SCHEDULE_SET_VALUE,
   payload
 });
