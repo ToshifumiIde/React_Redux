@@ -56,7 +56,6 @@ const HeaderNavigation = ({ setNextMonth , setPreviousMonth,setMonth ,month }) =
         </IconButton>
         <StyledDatePicker 
           value={month}
-          // onChange={()=>{openAddScheduleDialog()}}
           onChange={setMonth}
           valiant="inline"
           format="YYYY年M月"
