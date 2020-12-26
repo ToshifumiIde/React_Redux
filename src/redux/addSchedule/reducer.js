@@ -3,13 +3,15 @@ import {
   ADD_SCHEDULE_OPEN_DIALOG,
   ADD_SCHEDULE_CLOSE_DIALOG,
 } from "./actions";
+import dayjs from "dayjs";
+
 
 //初期の予定（空の予定を設定）
 const init = {
   form:{
     title:"",
     description:"",
-    date:null,
+    date:dayjs(),
     location:"",
   },
   isDialogOpen:false,

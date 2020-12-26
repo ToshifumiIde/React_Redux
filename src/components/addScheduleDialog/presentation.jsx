@@ -7,9 +7,17 @@ import {
   Button,
   Input,
   Grid,
+  IconButton,
 } from "@material-ui/core";
-import {LocationOnOutlined , NotesOutlined} from "@material-ui/icons";
+import {
+  LocationOnOutlined,
+  NotesOutlined,
+  AccessTime,
+  Close,
+} from "@material-ui/icons";
+import {DatePicker} from "@material-ui/pickers";
 import {withStyles} from "@material-ui/styles";
+import styles from "./style.module.css";
 
 const spacer = {margin:"4px 0"};
 const Title = withStyles({
@@ -18,14 +26,26 @@ const Title = withStyles({
 
 const AddScheduleDialog = ({
   schedule:{
-    form:{title , location , description},
+    form:{title , location , description, date},
     isDialogOpen
   },
   closeDialog,
   setSchedule
 }) => {
   return(
-    <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
+    <Dialog 
+      open={isDialogOpen}
+      onClose={closeDialog}
+      maxWidth="xs"
+      fullWidth
+    >
+    <DialogActions>
+      <div className={styles.closeButton}>
+      <IconButton onClick={closeDialog} size="small">
+        <Close />
+      </IconButton>
+      </div>
+    </DialogActions>
     <DialogContent >
       <Title 
         autoFocus
@@ -35,6 +55,30 @@ const AddScheduleDialog = ({
           setSchedule({title:e.target.value})
         }}
         placeholder="タイトルと日時を追加"/>
+        <Grid
+        container
+        spacing={1}
+        alignItems="center"
+        justify="space-between"
+        >
+          <Grid item>
+            <AccessTime />
+          </Grid>
+          <Grid item xs={10}>
+            <DatePicker
+              variant="inline"
+              format="YYYY年M月D日"
+              animateYearScrolling
+              fullWidth
+              style={spacer}
+              value={date}
+              onChange={d => {
+                setSchedule({date:d})
+              }}
+            >
+            </DatePicker>
+          </Grid>
+        </Grid>
       <Grid 
         container
         spacing={1}
