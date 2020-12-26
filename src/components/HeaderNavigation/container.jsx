@@ -7,13 +7,24 @@ import {
   formatMonth,
 } from "../../logic/calendar";
 import { calendarSetMonth } from "../../redux/calendar/actions";
+// import { 
+//   addScheduleOpenDialog,
+//   addScheduleSetValue,
+// } from "../../redux/addSchedule/actions";
 
-const mapStateToProps = state =>({calendar:state.calendar});
+//storeから必要な情報を選択し、propsの形に再形成する関数
+const mapStateToProps = state => (
+  {calendar:state.calendar}
+);
 
 const mapDispatchToProps = dispatch => ({
   setMonth: month => {
     dispatch(calendarSetMonth(month));
-  }
+  },
+  // openAddScheduleDialog:(d) => {
+  //   dispatch(addScheduleOpenDialog());
+  //   dispatch(addScheduleSetValue({date:d}));
+  // },
 });
 
 const mergeProps = (stateProps , dispatchProps) => ({

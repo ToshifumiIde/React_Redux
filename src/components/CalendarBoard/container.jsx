@@ -13,7 +13,7 @@ const mapStateToProps = state => (
 );
 
 //dialogを開くためのdispatch関数
-const mapDispatchToProps = dispatch =>({
+const mapDispatchToProps = dispatch => ({
   openAddScheduleDialog:(d) => {
     dispatch(addScheduleOpenDialog());
     dispatch(addScheduleSetValue({date:d}));
@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch =>({
 });
 
 //
-const mergeProps = (stateProps,dispatchProps) => ({
+const mergeProps = ( stateProps,dispatchProps ) => ({
   ...stateProps,
   ...dispatchProps,
   month:stateProps.calendar,
