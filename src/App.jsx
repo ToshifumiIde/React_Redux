@@ -15,6 +15,7 @@ dayjs.locale("ja");
 const store = createStore(rootReducer);
 
 const App = () => {
+  console.log(process.env.REACT_APP_FOO);
   return (
     <Provider store={store}>
       <MuiPickersUtilsProvider utils={DayjsUtils}>

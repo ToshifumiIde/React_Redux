@@ -6,7 +6,7 @@ import {
 import dayjs from "dayjs";
 
 
-//初期の予定（空の予定を設定）
+//個々の予定の初期値（空の予定を設定）
 const init = {
   form:{
     title:"",

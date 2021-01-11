@@ -3,6 +3,7 @@ import calendarReducer from "./calendar/reducer";
 import addScheduleReducer  from "./addSchedule/reducer";
 import schedulesReducer from "./schedules/reducer";
 
+//各々のreducerをここでまとめる
 const rootReducer = combineReducers({
   calendar:calendarReducer,
   addSchedule:addScheduleReducer,
